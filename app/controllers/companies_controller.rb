@@ -19,7 +19,7 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
 
     if @company.save
-        redirect_to company_path, notice: "The company has been successfully created"
+        redirect_to company_path(@company), notice: "The company has been successfully created"
     end 
   end
 
