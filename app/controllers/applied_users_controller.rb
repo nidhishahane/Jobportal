@@ -9,19 +9,12 @@ class AppliedUsersController < ApplicationController
   end
 
   def new
-  	 binding.pry
     @applieduser = AppliedUser.new(:vacancy_id => params[:vacancy_id])
     @applieduser.user_id = current_user.id
-
-    if @applieduser.save
-      	redirect_to appliedusers_path, notice: "Done"
-    end
-
   end
 
   def create
     @applieduser = AppliedUser.new(applieduser_params)
-
     if @applieduser.save
         redirect_to appliedusers_path(@applieduser), notice: "The applieduser has been successfully created"
     end
@@ -33,22 +26,20 @@ class AppliedUsersController < ApplicationController
 
   def update
     @applieduser = AppliedUser.find(params[:id])
-
     if @applieduser.update_attributes(applieduser_params)
       redirect_to applieduser_path(@applieduser), notice: "The applieduser has been successfully updated"
     end
   end
 
+
   def destroy
-      @applieduser = AppliedUser.find(params[:id])
-      @applieduser.destroy
-      redirect_to appliedusers_path, notice: "The applieduser has been successfully deleted"
+    @applieduser = AppliedUser.find(params[:id])
+    @applieduser.destroy
+    redirect_to appliedusers_path, notice: "The applieduser has been successfully deleted"
   end
   
   private
   def applieduser_params
-      params.require(:applieduser).permit! 
+    params.require(:applieduser).permit! 
   end
-end
-
 end
