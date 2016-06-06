@@ -1,9 +1,4 @@
-$(function() {
-  $('a#show_whatever').click(function(event){
-    event.preventDefault();
-    $('div#whatever').toggle();
-  });
-}); 
+
 
 $(document).on("click","#post-link",function(){
   $("#new-post").show();
