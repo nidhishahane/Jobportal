@@ -31,7 +31,7 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
 
     if @company.update_attributes(company_params)
-      redirect_to vacancies_path, notice: "The company has been successfully updated"
+      redirect_to companies_path, notice: "The company has been successfully updated"
     end
   end
 
