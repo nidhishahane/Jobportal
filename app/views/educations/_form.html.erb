@@ -1,0 +1,35 @@
+<h2>Add a Education:</h2>
+
+<%= form_for([@user, @user.educations.build]) do |f| %>
+<div class="form-group">
+    <p>
+      <%= f.label :course %><br>
+      <%= f.text_field :course , class: "form-control", placeholder: "Enter Course"%>
+    </p>
+  </div>
+  <div class="form-group">
+    <p>
+      <%= f.label :specialization %><br>
+      <%= f.text_field :specialization, class: "form-control", placeholder: "Enter specialization " %>
+    </p>
+  </div>
+  <div class="form-group">
+    <p>
+      <%= f.label :institute%><br>
+      <%= f.text_field :institute, class: "form-control", placeholder: "Enter Contactno" %>
+    </p>
+  </div>
+  <div class="form-group">
+    <p>
+      <%= f.label :passout_year %><br>
+      <%= f.text_field :passout_year, class: "form-control", placeholder: "Enter passout year" %>
+    </p>
+ 
+
+  
+<div class="form-group">
+    <p>
+      <%= f.submit %>
+    </p>
+  </div>
+<% end %>

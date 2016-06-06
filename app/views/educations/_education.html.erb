@@ -1,0 +1,16 @@
+<tr>
+<td><p>
+  <%= education.course %>
+</p></td>
+
+<p>
+ <td><%= education.specialization %>
+</p></td>
+<td><p>
+<%= education.institute %>
+</p></td>
+<p><td> 
+  <%= education.passout_year %>
+</td></p>
+<td>
+<%= link_to 'Edit', edit_user_education_path(@user,education), class: "btn btn-default" %> </td>
