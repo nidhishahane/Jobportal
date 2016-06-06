@@ -35,7 +35,7 @@
 </div>
 
 <div class=col-lg-9> 
-<h3>your education details here</h3>
+<h3>your education details</h3>
 <% unless @user.educations.blank? %>
 <table class="table table-bordered table-striped", class: "btn btn-primary">
 <tr>
@@ -49,5 +49,4 @@
   <%= render @user.educations %>
   <% end %>
 </div>
-
-</div>
+<%= link_to 'Back', users_path, class: "btn btn-default" %>

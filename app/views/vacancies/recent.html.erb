@@ -21,7 +21,6 @@
         <td><%= vacancy.key_skills%> </td>
         <td><%= vacancy.company.city%>(<%= vacancy.company.state%>)</td>
         
-        <td><%= link_to 'Apply', new_applieduser_path ,class: "btn btn-primary" %></td>
       </tr>
     <% end %>
   </table>
@@ -30,6 +29,6 @@
   <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
 <% end %>
 
-
+<%= link_to 'Back', companies_path, class: "btn btn-default" %>
 
  

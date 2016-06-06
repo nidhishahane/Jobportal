@@ -1,7 +1,7 @@
 <h2>Add a Education:</h2>
 
 <%= form_for([@user, @user.educations.build]) do |f| %>
-<div class="form-group">
+  <div class="form-group">
     <p>
       <%= f.label :course %><br>
       <%= f.text_field :course , class: "form-control", placeholder: "Enter Course"%>
@@ -16,7 +16,7 @@
   <div class="form-group">
     <p>
       <%= f.label :institute%><br>
-      <%= f.text_field :institute, class: "form-control", placeholder: "Enter Contactno" %>
+      <%= f.text_field :institute, class: "form-control", placeholder: "Enter Institute" %>
     </p>
   </div>
   <div class="form-group">
@@ -24,10 +24,8 @@
       <%= f.label :passout_year %><br>
       <%= f.text_field :passout_year, class: "form-control", placeholder: "Enter passout year" %>
     </p>
- 
-
-  
-<div class="form-group">
+ </div>
+  <div class="form-group">
     <p>
       <%= f.submit %>
     </p>
