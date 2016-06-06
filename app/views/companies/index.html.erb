@@ -46,12 +46,10 @@
 
         <%=link_to "Search by City", "#", id: "post-link1" %></p>
 
-
         <%= form_tag(vacancies_recent_path, :method => "get", id: "new-post") do %>
             <%= text_field_tag :search, params[:search], placeholder: "Search by Technology",required: true %>
             <%= submit_tag "Search", class: "btn btn-primary"  %>
         <% end %>
-
     
         <%= form_tag(companies_search_by_city_path, :method => "get", id: "new-post1") do %>
             <p><%= text_field_tag :search, params[:search], placeholder: "Search by City",required: true %> </p>
