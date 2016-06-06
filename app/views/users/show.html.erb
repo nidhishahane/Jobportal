@@ -1,2 +1,53 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h3>Welcome <%=@user.name %></h3>
+<h3> Your Details</h3>
+<hr>
+<div class="row">
+<div class=col-lg-3>
+<p>
+	<strong>Name</strong>
+	<%= @user.name  %>
+</p>
+<p> 
+	<strong>Your role</strong>
+<strong><% if(@user.roles_mask==1) %><%= "Admin" %> <% else %> <%= "User" %> <% end %></strong>
+</p>
+<p>
+	<strong>Contactno</strong>
+	<%= @user.contactno %>
+</p>
+<p>
+	<strong>Email</strong>
+	<%= @user.email %>
+</p>
+<p>
+	<strong>Current Location</strong>
+	<%= @user.current_location %>
+</p>
+<p>
+	<strong>Your key Skills</strong>
+	<%= @user.key_skills %>
+</p>
+<h4>Vacancies </h4>
+<%= link_to "Download Resume", @user.attachment_url %></td>
+<p>
+<%= link_to 'Edit', edit_user_path(@user), class: "btn btn-default" %>
+<%= link_to 'Add your Education',new_user_education_path(@user), class: "btn btn-default" %> </p>
+</div>
+
+<div class=col-lg-9> 
+<h3>your education details here</h3>
+<% unless @user.educations.blank? %>
+<table class="table table-bordered table-striped", class: "btn btn-primary">
+<tr>
+	<th>course</th>
+	<th> Specialization</th>
+	<th>Institute name</th>
+	<th> Pass out year</th>
+	
+</tr>
+
+  <%= render @user.educations %>
+  <% end %>
+</div>
+
+</div>

@@ -1,2 +1,59 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<%= form_for @user do |f| %>
+ <center><table width="50%" bgcolor="lightpink"><tr><td>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %> prohibited
+        this user from being saved:
+      </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name , class: "form-control", placeholder: "Enter Name"%>
+    </p>
+  </div>
+  <div class="form-group">
+    <p>
+      <%= f.label :current_location %><br>
+      <%= f.text_field :current_location, class: "form-control", placeholder: "Enter Address" %>
+    </p>
+  </div>
+  <div class="form-group">
+    <p>
+      <%= f.label :contactno %><br>
+      <%= f.text_field :contactno, class: "form-control", placeholder: "Enter Contactno" %>
+    </p>
+  </div>
+  <div class="form-group">
+    <p>
+      <%= f.label :email %><br>
+      <%= f.text_field :email, class: "form-control", placeholder: "Enter Emailid" %>
+    </p>
+  </div>
+  <div class="form-group">
+    <p>
+      <%= f.label :key_skills %><br>
+      <%= f.text_area :key_skills, class: "form-control", placeholder: "Enter Technology" %>
+    </p>
+  </div>
+
+  <div class="field">
+    <%= f.label :attachment %>
+    <%= f.file_field :attachment %>
+  </div>
+
+ 
+  <div class="form-group">
+    <p>
+      <%= f.submit %>
+    </p>
+  </div> </td></tr></table></center>
+<% end %>
+
