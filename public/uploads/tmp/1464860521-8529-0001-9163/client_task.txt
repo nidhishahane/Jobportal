@@ -1,0 +1,19 @@
+#Fix button css.
+
+1. button-primary` class is no longer applied at all, even when we apply it directly to the div ("<div class='button button-primary'"></div>), so all buttons are now gray. This just broke recently, in the last week or so; I'm not sure why. 
+2. Even if we fix problem (1), it seems we still can't use '@extend .button-primary' in a stylesheet.
+3. There's something I don't understand about the `.button-primary` selector in any case. Try this experiment: 1) delete all references to .button-primary in the entire project (so we can be sure they're not screwing anything up.) 2) Create a new button in html and give it class "button button-primary". This button should be colored red, because ".button-primary" is applied last and it should overried the gray background color. It is not colored red; it's still gray. If we apply "!important" to the .button-primary background-color property, then it works; but we should not need "!important" here! ".button" and ".button-primary" are at the same level of specificity, so the second one should win.
+
+
+----------------------------------------------------------------
+#Fix sticky tooltip problem.
+
+Go to a posts/show page (e.g., http://varity.herokuapp.com/posts/10). Scroll to the bottom and hover over one of the voting up-arrows, until the tooltip is displayed saying "This is helpful". Now click on the up arrow (you must be logged in first). The tooltip gets stuck and does not disappear when you remove the mouse. 
+
+
+-------------------------------------------------------------------
+
+#Figure out why we need "  after_destroy { choices.destroy_all }" on the MultipleChoiceQuestion model.
+
+
+Something broke here, and choices are no longer destroyed when the MultipleChoiceQuestion is destroyed, even though we have `accepts_nested_attributes_for :choices, allow_destroy: true` set. This is fixed by including the `after_destroy` hook, but we shouldn't need that. Figure out why this is happening.

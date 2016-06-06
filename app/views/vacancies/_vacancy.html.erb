@@ -1,0 +1,16 @@
+<tr>
+	<th><%= vacancy.name%></th>
+	<th><%= vacancy.number_of_vacancy%></th>
+	<th><%= vacancy.eligibility%></th>
+	<th><%= vacancy.technology%></th>
+	<th><%= vacancy.salary%></th>
+	<th><%= vacancy.experience%></th>
+	<th><%= vacancy.key_skills%></th>
+	<th><%= link_to 'Delete Vacancy', [vacancy.company,vacancy],
+							method: :delete,
+							data: {confirm: 'Are you sure?'}, class: "btn btn-danger"  %></th>
+</tr>
+
+
+
+

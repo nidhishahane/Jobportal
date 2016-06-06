@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course: MyString
+  specialization: MyString
+  institute: MyString
+  passout_year: MyString
+  user_id: 
+
+two:
+  course: MyString
+  specialization: MyString
+  institute: MyString
+  passout_year: MyString
+  user_id: 

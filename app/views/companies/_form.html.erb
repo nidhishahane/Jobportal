@@ -1,0 +1,63 @@
+<%= form_for @company do |f| %>
+ 
+  <% if @company.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@company.errors.count, "error") %> prohibited
+        this company from being saved:
+      </h2>
+      <ul>
+        <% @company.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <p>
+      <%= f.label :name %><br>
+      <%= f.text_field :name , class: "form-control", placeholder: "Enter Name"  required: true%>
+    </p>
+  </div>
+  <div class="form-group">
+    <p>
+      <%= f.label :address %><br>
+      <%= f.text_field :address, class: "form-control", placeholder: "Enter Address" %>
+    </p>
+  </div>
+  <div class="form-group">
+    <p>
+      <%= f.label :contactno %><br>
+      <%= f.text_field :contactno, class: "form-control", placeholder: "Enter Contactno" %>
+    </p>
+  </div>
+  <div class="form-group">
+    <p>
+      <%= f.label :email %><br>
+      <%= f.text_field :email, class: "form-control", placeholder: "Enter Emailid" %>
+    </p>
+  </div>
+  <div class="form-group">
+    <p>
+      <%= f.label :technology %><br>
+      <%= f.text_field :technology, class: "form-control", placeholder: "Enter Technology" %>
+    </p>
+  </div>
+  <div class="form-group">
+    <p>
+      <%= f.label :city %><br>
+      <%= f.text_field :city , class: "form-control", placeholder: "Enter City"%>
+    </p>
+  </div>
+  <div class="form-group">
+    <p>
+      <%= f.label :state %><br>
+      <%= f.text_field :state, class: "form-control", placeholder: "Enter State" %>
+    </p>
+  </div>
+  <div class="form-group">
+    <p>
+      <%= f.submit %>
+    </p>
+  </div>
+<% end %>

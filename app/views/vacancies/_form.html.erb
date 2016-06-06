@@ -1,0 +1,51 @@
+<%= form_for [@company, @company.vacancies.build] do |f|%>
+    <div class="form-group">
+	     <p>
+	        <%= f.label :name %>
+	        <%= f.text_field :name, class: "form-control", placeholder: "Enter Name" %>
+	     </p>
+	</div>
+    <div class="form-group">
+    	<p>
+	        <%= f.label :number_of_vacancy %>
+	        <%= f.text_field :number_of_vacancy, class: "form-control", placeholder: "Enter Number of Vacancy" %>
+     	</p>
+    </div>
+    <div class="form-group">
+     	<p>
+        	<%= f.label :eligibility %>
+        	<%= f.text_field :eligibility, class: "form-control", placeholder: "Enter Eligibility" %>
+     	</p>
+    </div>
+    <div class="form-group">
+     	<p>
+        	<%= f.label :technology %>
+        	<%= f.text_area :technology, class: "form-control", placeholder: "Enter Technology" %>
+     	</p>
+    </div>
+    <div class="form-group">
+     	<p>
+        	<%= f.label :salary %>
+        	<%= f.text_field :salary, class: "form-control", placeholder: "Enter Salary" %>
+     	</p>
+    </div>
+    <div class="form-group">
+     	<p>
+        	<%= f.label :experience %>
+        	<%= f.text_field :experience, class: "form-control", placeholder: "Enter Experience" %>
+     	</p>
+    </div>
+    <div class="form-group">
+     	<p>
+        	<%= f.label :key_skills %>
+        	<%= f.text_area :key_skills, class: "form-control", placeholder: "Enter Key Skills" %>
+     	</p>
+    </div>
+    
+    <div class="form-group">
+    	<p>
+     		<%= f.submit %>
+    	</p>
+    </div>
+<% end %>
+

@@ -1,0 +1,53 @@
+<h3> Company Details</h3>
+<hr>
+<p>
+	<strong>Name</strong>
+	<%= @company.name  %>
+</p>
+<p>
+	<strong>Address</strong>
+	<%= @company.address %>
+</p>
+<p>
+	<strong>Contactno</strong>
+	<%= @company.contactno %>
+</p>
+<p>
+	<strong>Email</strong>
+	<%= @company.email %>
+</p>
+<p>
+	<strong>Technology</strong>
+	<%= @company.technology %>
+</p>
+<p>
+	<strong>City</strong>
+	<%= @company.city %>
+</p>
+<p>
+	<strong>State</strong>
+	<%= @company.state %>
+</p>
+
+<hr>
+
+<p>
+<h4>Vacancies </h4>
+<table class="table table-bordered table-striped", class: "btn btn-primary">
+<tr>
+	<th>Vacancy Name</th>
+	<th> Number of Vacancies</th>
+	<th>Eligibility</th>
+	<th>Technology</th>
+	<th>Salary</th>
+	<th>Experience</th>
+	<th>Key Skills</th>
+</tr>
+	<%= render @company.vacancies %>
+</table>
+</p>
+	<h4>Create Vacancy</h4>
+	<%= render 'vacancies/form'%>
+
+<%= link_to 'Edit', edit_company_path(@company), class: "btn btn-default" %>&nbsp&nbsp&nbsp&nbsp&nbsp |&nbsp&nbsp&nbsp&nbsp&nbsp
+<%= link_to 'Back', companies_path, class: "btn btn-default" %>

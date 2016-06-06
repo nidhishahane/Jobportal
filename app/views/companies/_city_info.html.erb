@@ -1,0 +1,5 @@
+	
+<%= form_tag(vacancies_recent_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search by Technology",required: true %>
+<%= submit_tag "Search" %>
+<% end %>

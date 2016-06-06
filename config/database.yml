@@ -1,0 +1,64 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+#default: &default
+#  adapter: sqlite3
+#  pool: 5
+#  timeout: 5000
+
+# development:
+ # <<: *default
+#  database: db/development.sqlite3
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+
+#test:
+  #<<: *default
+  #database: db/test.sqlite3
+
+#production:
+ # <<: *default
+  #database: db/production.sqlite3
+
+
+development:
+  adapter: postgresql
+  encoding: UTF8
+  database: jobportal_development
+  username: postgres
+  password: postgres
+  host: localhost
+  pool: 5
+
+# Note: using sqlite3 for development because I don't know how to use multiple
+# postgres databases at the moment. rct 2015.10.07
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: jobportal_test
+  pool: 20
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5432
+
+#test:
+#  adapter: sqlite3
+#  database: db/test<%= ENV['TEST_ENV_NUMBER'] %>.sqlite3
+#  pool: 5
+#  timeout: 5000
+
+production:
+  database: jobportal_production
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  username: postgres
+  password: postgres
+  pool: 5
